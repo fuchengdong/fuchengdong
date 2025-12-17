@@ -17,7 +17,7 @@ Education
 * **M.S. in Data Science** | Feb. 2022 – Feb. 2023<br>
   [<span style="color: #ff8c42;">the University of Sydney</span>](https://www.sydney.edu.au/), Sydney, AU
   
-* **B.S. in Computer Science**| Mar. 2018 – Aug. 2021<br>
+* **B.S. in Computer Science** | Mar. 2018 – Aug. 2021<br>
   [<span style="color: #ff8c42;">the University of Sydney</span>](https://www.sydney.edu.au/), Sydney, AU
 
 A data-driven personal website
