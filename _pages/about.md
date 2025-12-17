@@ -16,11 +16,11 @@ Education
 
 * **M.S. in Data Science**
   
-  <span style="color: #0066cc;">[the University of Sydney](https://www.sydney.edu.au/)</span>, Sydney, AU
+  [<span style="color: orangered;">the University of Sydney</span>](https://www.sydney.edu.au/), Sydney, AU
   
 * **B.S. in Computer Science**
   
-  <span style="color: #0066cc;">[the University of Sydney](https://www.sydney.edu.au/)</span>, Sydney, AU
+  [<span style="color: orangered;">the University of Sydney</span>](https://www.sydney.edu.au/), Sydney, AU
 
 A data-driven personal website
 ======
