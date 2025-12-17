@@ -14,11 +14,11 @@ I'm interested in bridging visual understanding and controllable generation in A
 Education
 ======
 
-* **M.S. in Data Science**, the University of Sydney, 2023
-  * Location: Sydney, AU
+* **M.S. in Data Science**
+  [the University of Sydney](https://www.sydney.edu.au/), Sydney, AU
   
-* **B.S. in Computer Science**, the University of Sydney, 2021
-  * Location: Sydney, AU
+* **B.S. in Computer Science**
+  [the University of Sydney](https://www.sydney.edu.au/), Sydney, AU
 
 A data-driven personal website
 ======
