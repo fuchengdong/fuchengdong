@@ -15,7 +15,6 @@ Education
 ======
 
 * **M.S. in Data Science**
-  
   [<span style="color: orangered;">the University of Sydney</span>](https://www.sydney.edu.au/), Sydney, AU
   
 * **B.S. in Computer Science**
