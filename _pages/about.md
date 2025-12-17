@@ -14,11 +14,11 @@ I'm interested in bridging visual understanding and controllable generation in A
 Education
 ======
 
-* **M.S. in Data Science**
-  [<span style="color: orangered;">the University of Sydney</span>](https://www.sydney.edu.au/), Sydney, AU
+* **M.S. in Data Science**<br>
+  [<span style="color: #ff8c42;">the University of Sydney</span>](https://www.sydney.edu.au/), Sydney, AU
   
-* **B.S. in Computer Science**
-  [<span style="color: orangered;">the University of Sydney</span>](https://www.sydney.edu.au/), Sydney, AU
+* **B.S. in Computer Science**<br>
+  [<span style="color: #ff8c42;">the University of Sydney</span>](https://www.sydney.edu.au/), Sydney, AU
 
 A data-driven personal website
 ======
