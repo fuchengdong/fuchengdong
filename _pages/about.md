@@ -121,15 +121,15 @@ Featured Projects
   </div>
 
   <div class="project-card">
-    <h3>Multi-Modal Personalization System</h3>
+    <h3>Ultra-High Fidelity 4× Image Super-Resolution via Progressive Diffusion</h3>
     <div class="project-meta">2022 - 2023</div>
     <div class="project-description">
-      Built an efficient personalization pipeline integrating vision-language models for customized content creation. Reduced inference time by 40% while maintaining generation quality.
+      Diffusion-based 4× Super-Resolution framework for achieving ultra-high fidelity image reconstruction through progressive refinement and perceptual optimization.
     </div>
     <div class="project-tags">
-      <span class="project-tag">Multi-Modal Learning</span>
-      <span class="project-tag">CLIP</span>
-      <span class="project-tag">Stable Diffusion</span>
+      <span class="project-tag">Diffusion Models</span>
+      <span class="project-tag">Super-Resolution</span>
+      <span class="project-tag">Image Reconstruction</span>
     </div>
     <div class="project-links">
       <a href="#" class="project-link">📄 Paper</a>
