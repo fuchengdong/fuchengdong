@@ -140,7 +140,7 @@ Featured Projects
 
   <div class="project-card">
     <h3>AI-Powered Precision Background Removal</h3>
-    <div class="project-meta">2021 - 2022</div>
+    <div class="project-meta">2022 - 2023</div>
     <div class="project-description">
       High-performance background removal system leveraging deep learning for instant, accurate results. Features intelligent edge detection and matting algorithms that handle challenging scenarios including intricate hair details, fur textures, and complex lighting conditions. Delivers professional-grade cutouts in seconds, ideal for e-commerce platforms, photography studios, and automated content generation workflows.
     </div>
