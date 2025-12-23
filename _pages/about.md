@@ -126,7 +126,7 @@ Featured Projects
     <h3>IP Consistency in Multi-Modal Generation</h3>
     <div class="project-meta">2025 - Present</div>
     <div class="project-description">
-       A novel framework for maintaining identity preservation (IP) consistency across diverse generative outputs. The system ensures that characters, objects, and visual identities remain coherent across different poses, scenes, and modalities—from text-to-image to video generation. 
+       A novel framework for maintaining identity preservation (IP) consistency across diverse generative outputs. The system ensures that characters, objects, and visual identities remain coherent across different poses, scenes from text-to-image to video generation. 
     </div>
     <div class="project-tags">
       <span class="project-tag">IP Consistency</span>
