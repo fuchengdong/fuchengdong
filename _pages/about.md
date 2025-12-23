@@ -102,6 +102,7 @@ Featured Projects
 </style>
 
 <div class="project-cards">
+
   
   <div class="project-card">
     <h3>A Long-Term Consistent Video World Generation</h3>
@@ -114,6 +115,24 @@ Featured Projects
       <span class="project-tag">Video Generation</span>
       <span class="project-tag">Temporal Consistency</span>
       <span class="project-tag">Real-Time Inference</span>
+    </div>
+    <div class="project-links">
+      <a href="#" class="project-link">🎬 Demo</a>
+      <a href="#" class="project-link">📊 Case Study</a>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <h3>IP Consistency in Multi-Modal Generation</h3>
+    <div class="project-meta">2025 - Present</div>
+    <div class="project-description">
+       A novel framework for maintaining identity preservation (IP) consistency across diverse generative outputs. The system ensures that characters, objects, and visual identities remain coherent across different poses, scenes, and modalities—from text-to-image to video generation. 
+    </div>
+    <div class="project-tags">
+      <span class="project-tag">IP Consistency</span>
+      <span class="project-tag">Identity Preservation</span>
+      <span class="project-tag">Multi-Modal Generation</span>
+      <span class="project-tag">Character Coherence</span>
     </div>
     <div class="project-links">
       <a href="#" class="project-link">🎬 Demo</a>
