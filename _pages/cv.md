@@ -41,7 +41,6 @@ Work experience
   
 Skills
 ======
-
 * COMPUTER VISION & GENERATIVE AI:
   * Diffusion Models: Stable Diffusion, DDPM, DDIM, ControlNet, UNet, DiT
   * Vision-Language Models: CLIP, Grounding DINO, SAM
