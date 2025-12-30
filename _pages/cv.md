@@ -1,4 +1,4 @@
----
+<img width="517" height="94" alt="image" src="https://github.com/user-attachments/assets/af232d73-2841-4b5b-bcbc-ff1bf4613453" />---
 layout: archive
 title: "CV"
 permalink: /cv/
@@ -14,6 +14,8 @@ redirect_from:
     <i class="fas fa-download"></i> Download CV (PDF)
   </a>
 </div>
+
+
 Education
 ======
 * Ph.D in Version Control Theory, GitHub University, 2018 (expected)
@@ -39,6 +41,15 @@ Work experience
   
 Skills
 ======
+
+* COMPUTER VISION & GENERATIVE AI:
+  * Diffusion Models: Stable Diffusion, DDPM, DDIM, ControlNet, UNet, DiT
+  * Vision-Language Models: CLIP, Grounding DINO, SAM
+  * Image Generation: Text-to-image synthesis, identity-preserving generation, face-swapping, multi-modal conditioning
+  * Image Editing: Inpainting, outpainting, region-aware editing, semantic segmentation-guided editing
+  * Image Enhancement: Super-resolution (4× upscaling), image matting, background removal
+  * Image Detection: Object Detection, Semantic Segmentation
+
 * Skill 1
 * Skill 2
   * Sub-skill 2.1
