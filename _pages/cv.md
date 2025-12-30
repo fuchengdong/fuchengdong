@@ -1,4 +1,4 @@
-<img width="517" height="94" alt="image" src="https://github.com/user-attachments/assets/af232d73-2841-4b5b-bcbc-ff1bf4613453" />---
+<img width="517" height="198" alt="image" src="https://github.com/user-attachments/assets/97919158-3e92-478c-9d2e-c4135de51e9e" /><img width="517" height="94" alt="image" src="https://github.com/user-attachments/assets/af232d73-2841-4b5b-bcbc-ff1bf4613453" />---
 layout: archive
 title: "CV"
 permalink: /cv/
@@ -49,13 +49,20 @@ Skills
   * Image Editing: Inpainting, outpainting, region-aware editing, semantic segmentation-guided editing
   * Image Enhancement: Super-resolution (4× upscaling), image matting, background removal
   * Image Detection: Object Detection, Semantic Segmentation
+ 
+* DEEP LEARNING & MACHINE LEARNING:
+  * Model Architecture Design: Plug-and-play modules, feature fusion, attention mechanisms,
+  * Training Techniques: Fine-tuning, domain adaptation, in-domain pretraining, few-shot learning
+  * Multi-modal Learning: Vision-language alignment, cross-modal feature fusion
 
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* PROGRAMMING & TOOLS:
+  * Languages: Python, R
+  * Frameworks: PyTorch, TensorFlow, Hugging Face, Transformers, Diffusers, CLIP, mmcv
+  * Libraries: OpenCV, PIL, NumPy, Pandas, Matplotlib, Albumentations
+
+* LANGUAGE:
+  * Mandarin (native)
+  * English (IELTS: 6.5)
 
 Publications
 ======
