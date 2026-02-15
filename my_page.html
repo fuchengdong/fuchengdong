@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chengdong Fu</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Chengdong Fu - Personal Homepage">
+    <meta name="keywords" content="Chengdong Fu,Computer Vision,Machine Learning,Deep Learning,Artificial Intelligence">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+/* Color Scheme */
+:root {
+    --background-color: #fefbf5;
+    --highlight-color: #b6274e;
+    --main-color: #394661;
+    --link-color: #427e3e;
+    --link-color-hover: #292c1f;
+    --secondary-link-color: #845836;
+    --secondary-link-border-color: #7d99b1;
+    --secondary-content-background-color: #feffff;
+    --link-button-background-color: #fafdff;
+}
+
+body{margin:0;padding:0;font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;}
+a{color:var(--link-color);text-decoration:none;}
+a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
+
+#main{margin:0 auto 30px;padding:45px 30px 15px;width:100%;min-width:240px;text-align:center;background-color:var(--background-color)}
+.highlight{color:var(--highlight-color);font-weight:600}
+.highlight:hover{color:var(--highlight-color);font-weight:600}
+
+.main-content{padding:0;text-align:center;cursor:default;}
+@media (min-width: 768px) {.main-content{width:66%;min-width:668px;margin:auto;}}
+@media (min-width: 1200px) {.main-content{width:66%;max-width:1080px;margin:auto;}}
+
+#main-content-container{margin:0 auto;padding:15px 0 0;max-width:1080px;}
+@media (min-width: 768px) { #main-content-container{padding:15px 0 0;} }
+#main-content-container .col-avatar{text-align:center;min-width:220px;}
+#main-content-container .col-avatar .avatar{z-index:100;width:200px;height:200px;border-radius:100%;box-shadow:0 0 0 0.3em #eee;opacity:1;object-fit:cover;}
+
+#main-content-container .col-info{height:100%;align-items:center;}
+#main-info-container{padding-top:15px}
+#main-info-container .col-name{text-align:center;margin-top:30px}
+@media (min-width: 768px) { #main-info-container .col-name{text-align:left;margin-top:0;}}
+#main-info-container .col-name .text{text-align:left;margin-bottom:0.5rem;}
+#main-info-container .col-name .name{color:var(--main-color);font-size:1.85em;font-family:"Source Sans Pro",Helvetica,sans-serif;font-weight:600;}
+#main-info-container .col-name .email{color:#333;font-size:16px;margin:10px 0;}
+#main-info-container .col-link{text-align:center;margin:15px 0;}
+#main-info-container .col-link ul {margin:0px auto;padding:0;list-style:none;text-align:center}
+#main-info-container .col-link li {display:inline-block;margin:0 10px;padding:0;color:#ccc;line-height:10px}
+#main-info-container .col-link li a{width:40px;height:40px;color:#999;padding:0;font-size:40px;line-height:40px;transition:color 0.3s;}
+#main-info-container .col-link li a:hover{color:var(--link-color);text-decoration:none;}
+
+.content-container{width:100%;padding:0 30px}
+
+#pub-container{margin:auto;padding: 0 0em;max-width:1080px;text-align:left;padding-top:30px;}
+#pub-container .subtitle{color:var(--main-color);font-size:1.5em;font-weight:600;margin-bottom:20px;}
+#pub-card-container .pub-card{width: 100%;padding-bottom:25px;font-size:1rem;border-bottom:1px solid #eee;margin-bottom:25px;}
+#pub-card-container .pub-card:last-child{border-bottom:none;}
+#pub-card-container .pub-card .col-l{text-align:center;padding-top:10px}
+#pub-card-container .pub-card .col-r{padding-top:10px}
+@media (min-width: 768px) {
+  #pub-card-container .pub-card .col-l{flex:0 0 30%;max-width:30%}
+  #pub-card-container .pub-card .col-r{flex:0 0 70%;max-width:70%}
+}
+#pub-card-container .pub-card img{width:100%;margin:0 auto;border-radius:5px;}
+#pub-card-container .pub-card-body{width:100%;background:transparent;padding-left:0px}
+#pub-card-container .pub-card .title{font-weight:600;font-size:1.1rem;margin-bottom:8px;line-height:1.4;color:#222;}
+#pub-card-container .pub-card .authors{font-weight:400;color:#666666;margin-bottom:8px;line-height:1.4;font-size:0.95rem;}
+#pub-card-container .pub-card .authors a{color:#666666}
+#pub-card-container .pub-card .authors u{color:#333333;font-weight:600;text-decoration:none}
+#pub-card-container .pub-card .conference{color:#333333;font-weight:600;margin-right:10px;}
+#pub-card-container .pub-card .info{line-height:1.8;}
+#pub-card-container .pub-card .info a{margin-right:10px;padding:3px 10px;background:#f0f0f0;border-radius:3px;font-size:0.9rem;}
+#pub-card-container .pub-card .info a:hover{background:#e0e0e0;}
+
+#footer{padding:30px 0;margin-top:3rem;min-width:240px;background:var(--background-color);font-size:14px;text-align:center;border-top:1px solid #e0e0e0;}
+#footer .container{max-width:540px;padding:0 45px;}
+#footer .copyright{margin:10px auto;font-size:0.95rem;line-height:1.6;color:var(--main-color)}
+#footer a{color:#666666}
+#footer a:hover{color:#333333}
+
+.bold{font-weight:600}
+    </style>
+</head>
+
+<body>
+
+<div id="main">
+    <div class="main-content">
+        <div id="main-content-container" class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-3 col-avatar">
+                    <!-- 使用占位头像，请替换为实际头像图片链接 -->
+                    <img src="./images/9BWTUhgH2Co8weQHQU5cVY.png" class="avatar" alt="Chengdong Fu" />
+
+                </div>
+                <div class="col-sm-12 col-md-8">
+                    <div id="main-info-container">
+                        <div class="col-name">
+                            <h1 class="name"><span>Chengdong Fu</span></h1>
+                            <p class="email">
+                                <span style="margin-right:1em">Email: fuchengdong1@outlook.com </span>
+                            </p>
+                            <p class="text">
+                                Hi! I'm Chengdong Fu, a Machine Learning Engineer with 3 years of industry experience specializing in generative AI and computer vision. My expertise lies in designing controllable generative models through semantic guidance and hierarchical control mechanisms, with a focus on modular, plug-and-play architectures.
+                            </p>
+                            <p class="text">
+                                I'm interested in bridging visual understanding and controllable generation in AI systems. Specifically, I wish to use computer vision and multi-modal learning algorithms to develop efficient personalization techniques for diffusion models, enabling rich, fine-grained control over user interactions for customized content creation experiences.
+                            </p>
+                        </div>
+                        <div class="col-link">
+                            <ul>
+                                <li><a target="_blank" href="https://github.com/chengdongfu" title="GitHub"><i class="fa fa-github"></i></a></li>
+                                <li><a target="_blank" href="https://scholar.google.com" title="Google Scholar"><i class="fa fa-graduation-cap"></i></a></li>
+                                <li><a target="_blank" href="https://www.linkedin.com/in/chengdong-fu-909597228" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a target="_blank" href="https://twitter.com" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-content">
+    <div class="content-container">
+        <div id="pub-container">
+            <h5 class="subtitle">Featured Projects</h5>
+            <div id="pub-card-container">
+
+                <!-- Publication 1 -->
+                <div class="pub-card">
+                    <div class="row">
+                        <div class="col-l col-xs-12 col-lg-3">
+                            <img src="https://via.placeholder.com/300x200/427e3e/ffffff?text=Project+1" alt="Project 1" />
+                        </div>
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title">A Long-Term Consistent Video World Generation</h5>
+                                <h6 class="authors">
+                                    A real-time world-model that generates continuous video streams while maintaining long-horizon coherence. Designed for interactive, low-latency use, supports real-time updates from user inputs or events while keeping the world consistent—so actions have lasting consequences and the scene remains logically aligned over time.
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">2025 - Present</span>
+                                    <a target="_blank" href="#">Demo</a>
+                                    <a target="_blank" href="#">Case Study</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 2 -->
+                <div class="pub-card">
+                    <div class="row">
+                        <div class="col-l col-xs-12 col-lg-3">
+                            <img src="https://via.placeholder.com/300x200/b6274e/ffffff?text=Project+2" alt="Project 2" />
+                        </div>
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title">IP Consistency in Multi-Modal Generation</h5>
+                                <h6 class="authors">
+                                    A novel framework for maintaining identity preservation (IP) consistency across diverse generative outputs. The system ensures that characters, objects, and visual identities remain coherent across different poses, scenes from text-to-image to video generation.
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">2025 - Present</span>
+                                    <a target="_blank" href="#">Demo</a>
+                                    <a target="_blank" href="#">Case Study</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 3 -->
+                <div class="pub-card">
+                    <div class="row">
+                        <div class="col-l col-xs-12 col-lg-3">
+                            <img src="https://via.placeholder.com/300x200/845836/ffffff?text=Project+3" alt="Project 3" />
+                        </div>
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title">Multi-Modal Region-Aware Image Generation Framework</h5>
+                                <h6 class="authors">
+                                    An advanced image editing system that empowers users with precise, region-specific control over AI-generated content. This innovative framework introduces an intuitive interaction paradigm where users can directly select and manipulate specific regions within an image, enabling targeted modifications while preserving the integrity of unselected areas.
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">2022 - 2023</span>
+                                    <a target="_blank" href="#">Demo</a>
+                                    <a target="_blank" href="#">Case Study</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 4 -->
+                <div class="pub-card">
+                    <div class="row">
+                        <div class="col-l col-xs-12 col-lg-3">
+                            <img src="https://via.placeholder.com/300x200/427e3e/ffffff?text=Project+4" alt="Project 4" />
+                        </div>
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title">Ultra-High Fidelity 4× Image Super-Resolution via Progressive Diffusion</h5>
+                                <h6 class="authors">
+                                    A novel diffusion-based super-resolution framework designed to achieve 4× upscaling with ultra-high fidelity image reconstruction. Leveraging the power of denoising diffusion probabilistic models (DDPMs) combined with progressive refinement strategies and perceptual optimization techniques to generate photorealistic high-resolution images from low-resolution inputs.
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">2022 - 2023</span>
+                                    <a target="_blank" href="#">Paper</a>
+                                    <a target="_blank" href="#">Code</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 5 -->
+                <div class="pub-card">
+                    <div class="row">
+                        <div class="col-l col-xs-12 col-lg-3">
+                            <img src="https://via.placeholder.com/300x200/b6274e/ffffff?text=Project+5" alt="Project 5" />
+                        </div>
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title">AI-Powered Precision Background Removal</h5>
+                                <h6 class="authors">
+                                    High-performance background removal system leveraging deep learning for instant, accurate results. Features intelligent edge detection and matting algorithms that handle challenging scenarios including intricate hair details, fur textures, and complex lighting conditions. Delivers professional-grade cutouts in seconds, ideal for e-commerce platforms, photography studios, and automated content generation workflows.
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">2022 - 2023</span>
+                                    <a target="_blank" href="#">Paper</a>
+                                    <a target="_blank" href="#">Code</a>
+                                    <a target="_blank" href="#">Demo</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 6 -->
+                <div class="pub-card">
+                    <div class="row">
+                        <div class="col-l col-xs-12 col-lg-3">
+                            <img src="https://via.placeholder.com/300x200/845836/ffffff?text=Project+6" alt="Project 6" />
+                        </div>
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title">PromptPalette: Frequency-Aware Text Fusion for Robust Diffusion Guidance</h5>
+                                <h6 class="authors">
+                                    A frequency-aware adaptive text fusion module designed to strengthen diffusion guidance for complex prompts. The key idea is to explicitly model and re-balance high-frequency and low-frequency textual information, and then fuse them into a unified guidance representation that is dynamically conditioned on the prompt's internal frequency structure.
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">2022 - 2023</span>
+                                    <a target="_blank" href="#">Paper</a>
+                                    <a target="_blank" href="#">Code</a>
+                                    <a target="_blank" href="#">Demo</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer">
+    <div class="container">
+        <div class="copyright">
+            &copy; 2025 Chengdong Fu. All rights reserved.
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
