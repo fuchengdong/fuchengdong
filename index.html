@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <style type="text/css">
-/* Color Scheme */
 :root {
     --background-color: #fefbf5;
     --highlight-color: #b6274e;
@@ -84,6 +83,64 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
 #footer a:hover{color:#333333}
 
 .bold{font-weight:600}
+
+/* 宝可梦固定在右下角 */
+#ditto-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+#ditto-container:hover {
+    transform: scale(1.3) rotate(-10deg);
+}
+#ditto-container img {
+    width: 64px;
+    height: 64px;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+}
+#ditto-tooltip {
+    position: absolute;
+    bottom: 72px;
+    right: 0;
+    background: #fff;
+    border: 2px solid #b6274e;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: #394661;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+#ditto-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 16px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #b6274e;
+}
+#ditto-container:hover #ditto-tooltip {
+    opacity: 1;
+}
+
+/* 变身动画 */
+@keyframes transformPop {
+    0%   { transform: scale(1);    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25))      brightness(1);   }
+    30%  { transform: scale(0.3) rotate(20deg);  filter: drop-shadow(0 2px 6px rgba(182,39,78,0.6))  brightness(2);   }
+    60%  { transform: scale(1.4) rotate(-10deg); filter: drop-shadow(0 2px 6px rgba(182,39,78,0.8))  brightness(1.5); }
+    100% { transform: scale(1);    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25))      brightness(1);   }
+}
+#ditto-container.transforming img {
+    animation: transformPop 0.5s ease forwards;
+}
     </style>
 </head>
 
@@ -94,9 +151,7 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
         <div id="main-content-container" class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-3 col-avatar">
-                    <!-- 使用占位头像，请替换为实际头像图片链接 -->
                     <img src="./images/9BWTUhgH2Co8weQHQU5cVY.png" class="avatar" alt="Chengdong Fu" />
-
                 </div>
                 <div class="col-sm-12 col-md-8">
                     <div id="main-info-container">
@@ -133,7 +188,6 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
             <h5 class="subtitle">Featured Projects</h5>
             <div id="pub-card-container">
 
-                <!-- Publication 1 -->
                 <div class="pub-card">
                     <div class="row">
                         <div class="col-l col-xs-12 col-lg-3">
@@ -155,7 +209,6 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
                     </div>
                 </div>
 
-                <!-- Publication 2 -->
                 <div class="pub-card">
                     <div class="row">
                         <div class="col-l col-xs-12 col-lg-3">
@@ -177,7 +230,6 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
                     </div>
                 </div>
 
-                <!-- Publication 3 -->
                 <div class="pub-card">
                     <div class="row">
                         <div class="col-l col-xs-12 col-lg-3">
@@ -199,7 +251,6 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
                     </div>
                 </div>
 
-                <!-- Publication 4 -->
                 <div class="pub-card">
                     <div class="row">
                         <div class="col-l col-xs-12 col-lg-3">
@@ -221,7 +272,6 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
                     </div>
                 </div>
 
-                <!-- Publication 5 -->
                 <div class="pub-card">
                     <div class="row">
                         <div class="col-l col-xs-12 col-lg-3">
@@ -244,7 +294,6 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
                     </div>
                 </div>
 
-                <!-- Publication 6 -->
                 <div class="pub-card">
                     <div class="row">
                         <div class="col-l col-xs-12 col-lg-3">
@@ -280,9 +329,87 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
     </div>
 </div>
 
+<!-- 宝可梦 固定右下角 -->
+<div id="ditto-container">
+    <div id="ditto-tooltip"></div>
+    <img id="pokemon-sprite" src="" alt="Pokemon" />
+</div>
+
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+<script>
+(function () {
+  const DITTO = {
+    url:  'https://projectpokemon.org/images/normal-sprite/ditto.gif',
+    name: "✨ It's Ditto!"
+  };
+
+  const CANDIDATES = [
+    { url: 'https://projectpokemon.org/images/normal-sprite/munchlax.gif',                            name: "🍖 Transform!" },
+    { url: 'https://projectpokemon.org/images/normal-sprite/swirlix.gif',                             name: "🍬 Transform!" },
+    { url: 'https://projectpokemon.org/images/normal-sprite/goomy.gif',  name: "💧 Transform!" },
+  ];
+
+  const container = document.getElementById('ditto-container');
+  const sprite    = document.getElementById('pokemon-sprite');
+  const tooltip   = document.getElementById('ditto-tooltip');
+
+  // true = 当前显示百变怪，false = 当前显示随机精灵
+  let isDitto   = false;
+  let animating = false;
+
+  // 上一次随机精灵的索引，避免连续两次相同
+  let lastIndex = -1;
+
+  function pickRandom() {
+    let idx;
+    do { idx = Math.floor(Math.random() * CANDIDATES.length); }
+    while (idx === lastIndex && CANDIDATES.length > 1);
+    lastIndex = idx;
+    return CANDIDATES[idx];
+  }
+
+  function applyPokemon(pokemon) {
+    sprite.src        = pokemon.url;
+    sprite.alt        = pokemon.name;
+    tooltip.textContent = pokemon.name;
+  }
+
+  function triggerTransform(nextPokemon) {
+    if (animating) return;
+    animating = true;
+
+    container.classList.add('transforming');
+
+    container.addEventListener('animationend', function onEnd() {
+      container.removeEventListener('animationend', onEnd);
+      container.classList.remove('transforming');
+      applyPokemon(nextPokemon);
+      animating = false;
+    });
+  }
+
+  // 初始化：随机显示一只精灵
+  applyPokemon(pickRandom());
+
+  // 点击切换逻辑
+  container.addEventListener('click', function () {
+    if (animating) return;
+
+    if (!isDitto) {
+      // 当前是随机精灵 → 变成百变怪
+      isDitto = true;
+      triggerTransform(DITTO);
+    } else {
+      // 当前是百变怪 → 变成随机精灵
+      isDitto = false;
+      triggerTransform(pickRandom());
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
