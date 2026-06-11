@@ -66,6 +66,7 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
   #pub-card-container .pub-card .col-r{flex:0 0 70%;max-width:70%}
 }
 #pub-card-container .pub-card img{width:100%;margin:0 auto;border-radius:5px;}
+#pub-card-container .pub-card video{width:100%;margin:0 auto;border-radius:5px;display:block;}
 #pub-card-container .pub-card-body{width:100%;background:transparent;padding-left:0px}
 #pub-card-container .pub-card .title{font-weight:600;font-size:1.1rem;margin-bottom:8px;line-height:1.4;color:#222;}
 #pub-card-container .pub-card .authors{font-weight:400;color:#666666;margin-bottom:8px;line-height:1.4;font-size:0.95rem;}
@@ -212,13 +213,21 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
                 <div class="pub-card">
                     <div class="row">
                         <div class="col-l col-xs-12 col-lg-3">
-                            <img src="https://via.placeholder.com/300x200/b6274e/ffffff?text=Project+2" alt="Project 2" />
+                            <!-- 替换为本地视频 -->
+                            <video
+                                src="./videos/force_vase.mp4"
+                                autoplay
+                                loop
+                                muted
+                                playsinline
+                                alt="Streaming Video Synthesis with Interactive Physical Conditioning"
+                            ></video>
                         </div>
                         <div class="col-r col-xs-12 col-lg-9">
                             <div class="pub-card-body">
-                                <h5 class="title">IP Consistency in Multi-Modal Generation</h5>
+                                <h5 class="title">Streaming Video Synthesis with Interactive Physical Conditioning</h5>
                                 <h6 class="authors">
-                                    A novel framework for maintaining identity preservation (IP) consistency across diverse generative outputs. The system ensures that characters, objects, and visual identities remain coherent across different poses, scenes from text-to-image to video generation.
+                                    A novel framework for enabling real-time streaming video generation conditioned on dynamic interactive inputs. The system ensures that motion continuity, temporal coherence, and visual fidelity remain consistent across continuously synthesized frames, from single-prompt initialization to multi-modal interactive control signals.
                                 </h6>
                                 <p class="info">
                                     <span class="conference">2025 - Present</span>
@@ -347,20 +356,17 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
   };
 
   const CANDIDATES = [
-    { url: 'https://projectpokemon.org/images/normal-sprite/munchlax.gif',                            name: "🍖 Transform!" },
-    { url: 'https://projectpokemon.org/images/normal-sprite/swirlix.gif',                             name: "🍬 Transform!" },
-    { url: 'https://projectpokemon.org/images/normal-sprite/goomy.gif',  name: "💧 Transform!" },
+    { url: 'https://projectpokemon.org/images/normal-sprite/munchlax.gif',  name: "🍖 Transform!" },
+    { url: 'https://projectpokemon.org/images/normal-sprite/swirlix.gif',   name: "🍬 Transform!" },
+    { url: 'https://projectpokemon.org/images/normal-sprite/goomy.gif',     name: "💧 Transform!" },
   ];
 
   const container = document.getElementById('ditto-container');
   const sprite    = document.getElementById('pokemon-sprite');
   const tooltip   = document.getElementById('ditto-tooltip');
 
-  // true = 当前显示百变怪，false = 当前显示随机精灵
   let isDitto   = false;
   let animating = false;
-
-  // 上一次随机精灵的索引，避免连续两次相同
   let lastIndex = -1;
 
   function pickRandom() {
@@ -372,8 +378,8 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
   }
 
   function applyPokemon(pokemon) {
-    sprite.src        = pokemon.url;
-    sprite.alt        = pokemon.name;
+    sprite.src          = pokemon.url;
+    sprite.alt          = pokemon.name;
     tooltip.textContent = pokemon.name;
   }
 
@@ -391,19 +397,14 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
     });
   }
 
-  // 初始化：随机显示一只精灵
   applyPokemon(pickRandom());
 
-  // 点击切换逻辑
   container.addEventListener('click', function () {
     if (animating) return;
-
     if (!isDitto) {
-      // 当前是随机精灵 → 变成百变怪
       isDitto = true;
       triggerTransform(DITTO);
     } else {
-      // 当前是百变怪 → 变成随机精灵
       isDitto = false;
       triggerTransform(pickRandom());
     }
