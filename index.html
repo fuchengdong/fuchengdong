@@ -66,7 +66,7 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
   #pub-card-container .pub-card .col-r{flex:0 0 70%;max-width:70%}
 }
 #pub-card-container .pub-card img{width:100%;margin:0 auto;border-radius:5px;}
-#pub-card-container .pub-card video{width:100%;margin:0 auto;border-radius:5px;display:block;}
+#pub-card-container .pub-card video{width:100%;margin:0 auto;border-radius:5px;display:block;object-fit:cover;}
 #pub-card-container .pub-card-body{width:100%;background:transparent;padding-left:0px}
 #pub-card-container .pub-card .title{font-weight:600;font-size:1.1rem;margin-bottom:8px;line-height:1.4;color:#222;}
 #pub-card-container .pub-card .authors{font-weight:400;color:#666666;margin-bottom:8px;line-height:1.4;font-size:0.95rem;}
@@ -85,7 +85,6 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
 
 .bold{font-weight:600}
 
-/* 宝可梦固定在右下角 */
 #ditto-container {
     position: fixed;
     bottom: 20px;
@@ -132,7 +131,6 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
     opacity: 1;
 }
 
-/* 变身动画 */
 @keyframes transformPop {
     0%   { transform: scale(1);    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25))      brightness(1);   }
     30%  { transform: scale(0.3) rotate(20deg);  filter: drop-shadow(0 2px 6px rgba(182,39,78,0.6))  brightness(2);   }
@@ -213,14 +211,14 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
                 <div class="pub-card">
                     <div class="row">
                         <div class="col-l col-xs-12 col-lg-3">
-                            <!-- 替换为本地视频 -->
                             <video
+                                id="force-vase-video"
                                 src="./videos/force_vase.mp4"
                                 autoplay
                                 loop
                                 muted
                                 playsinline
-                                alt="Streaming Video Synthesis with Interactive Physical Conditioning"
+                                preload="auto"
                             ></video>
                         </div>
                         <div class="col-r col-xs-12 col-lg-9">
@@ -349,16 +347,44 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
 
 <script>
+// ── 视频强制循环播放 ──────────────────────────────────────────
+(function () {
+    var video = document.getElementById('force-vase-video');
+    if (!video) return;
+
+    // 方案1：canplay 后立即尝试播放
+    video.addEventListener('canplay', function () {
+        video.play().catch(function (e) {
+            console.warn('Autoplay blocked:', e);
+        });
+    });
+
+    // 方案2：ended 后强制重置并重播，确保循环不中断
+    video.addEventListener('ended', function () {
+        video.currentTime = 0;
+        video.play().catch(function (e) {
+            console.warn('Loop replay blocked:', e);
+        });
+    });
+
+    // 方案3：若视频已就绪（readyState >= 3），直接触发播放
+    if (video.readyState >= 3) {
+        video.play().catch(function (e) {
+            console.warn('Direct play blocked:', e);
+        });
+    }
+})();
+
+// ── 宝可梦 ────────────────────────────────────────────────────
 (function () {
   const DITTO = {
     url:  'https://projectpokemon.org/images/normal-sprite/ditto.gif',
     name: "✨ It's Ditto!"
   };
-
   const CANDIDATES = [
-    { url: 'https://projectpokemon.org/images/normal-sprite/munchlax.gif',  name: "🍖 Transform!" },
-    { url: 'https://projectpokemon.org/images/normal-sprite/swirlix.gif',   name: "🍬 Transform!" },
-    { url: 'https://projectpokemon.org/images/normal-sprite/goomy.gif',     name: "💧 Transform!" },
+    { url: 'https://projectpokemon.org/images/normal-sprite/munchlax.gif', name: "🍖 Transform!" },
+    { url: 'https://projectpokemon.org/images/normal-sprite/swirlix.gif',  name: "🍬 Transform!" },
+    { url: 'https://projectpokemon.org/images/normal-sprite/goomy.gif',    name: "💧 Transform!" },
   ];
 
   const container = document.getElementById('ditto-container');
@@ -386,9 +412,7 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
   function triggerTransform(nextPokemon) {
     if (animating) return;
     animating = true;
-
     container.classList.add('transforming');
-
     container.addEventListener('animationend', function onEnd() {
       container.removeEventListener('animationend', onEnd);
       container.classList.remove('transforming');
