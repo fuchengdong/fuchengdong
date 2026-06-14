@@ -190,7 +190,15 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
                 <div class="pub-card">
                     <div class="row">
                         <div class="col-l col-xs-12 col-lg-3">
-                            <img src="https://via.placeholder.com/300x200/427e3e/ffffff?text=Project+1" alt="Project 1" />
+                            <video
+                                id="demo-harbour-video"
+                                src="./videos/demo_harbour.mp4"
+                                autoplay
+                                loop
+                                muted
+                                playsinline
+                                preload="auto"
+                            ></video>
                         </div>
                         <div class="col-r col-xs-12 col-lg-9">
                             <div class="pub-card-body">
@@ -349,30 +357,29 @@ a:hover{color:var(--link-color-hover);cursor:pointer;text-decoration:none;}
 <script>
 // ── 视频强制循环播放 ──────────────────────────────────────────
 (function () {
-    var video = document.getElementById('force-vase-video');
-    if (!video) return;
-
-    // 方案1：canplay 后立即尝试播放
-    video.addEventListener('canplay', function () {
-        video.play().catch(function (e) {
-            console.warn('Autoplay blocked:', e);
+    var videos = [
+        document.getElementById('demo-harbour-video'),
+        document.getElementById('force-vase-video')
+    ];
+    videos.forEach(function(video) {
+        if (!video) return;
+        video.addEventListener('canplay', function () {
+            video.play().catch(function (e) {
+                console.warn('Autoplay blocked:', e);
+            });
         });
+        video.addEventListener('ended', function () {
+            video.currentTime = 0;
+            video.play().catch(function (e) {
+                console.warn('Loop replay blocked:', e);
+            });
+        });
+        if (video.readyState >= 3) {
+            video.play().catch(function (e) {
+                console.warn('Direct play blocked:', e);
+            });
+        }
     });
-
-    // 方案2：ended 后强制重置并重播，确保循环不中断
-    video.addEventListener('ended', function () {
-        video.currentTime = 0;
-        video.play().catch(function (e) {
-            console.warn('Loop replay blocked:', e);
-        });
-    });
-
-    // 方案3：若视频已就绪（readyState >= 3），直接触发播放
-    if (video.readyState >= 3) {
-        video.play().catch(function (e) {
-            console.warn('Direct play blocked:', e);
-        });
-    }
 })();
 
 // ── 宝可梦 ────────────────────────────────────────────────────
